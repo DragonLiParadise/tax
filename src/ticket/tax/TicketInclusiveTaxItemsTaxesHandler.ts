@@ -2,16 +2,16 @@ import {Handler} from "../../interfaces";
 import {TicketItemsTaxesPayload} from "./TicketItemsTaxesPayload";
 import {OrderItemState} from "../item";
 import * as _ from "lodash";
-import {TaxableOrderItemTaxesHandler} from "../item";
+import {InclusiveTaxOrderItemTaxesHandler} from "../item";
 
-export class TicketTaxableItemsTaxesHandler implements Handler<TicketItemsTaxesPayload> {
+export class TicketInclusiveTaxItemsTaxesHandler implements Handler<TicketItemsTaxesPayload> {
     constructor(
-        readonly handler: TaxableOrderItemTaxesHandler
+        readonly handler: InclusiveTaxOrderItemTaxesHandler
     ) {
     }
 
     handle(payload: TicketItemsTaxesPayload): void {
-        payload.taxableItems.forEach((orderItem: OrderItemState) => {
+        payload.inclusiveTaxItems.forEach((orderItem: OrderItemState) => {
             this.handler.handle({
                 ...payload,
                 menuTaxes: _.cloneDeep(payload.menuTaxes),

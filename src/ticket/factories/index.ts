@@ -1,2 +1,4 @@
 export * from './TicketTaxableItemsFactory';
-export * from './TicketItemsFactoryPayload';
+export * from './TicketAboutItemsFactoryPayload';
+export * from './TicketAboutTaxItemsFactory';
+export * from './TicketIncludedTaxItemsFactory';

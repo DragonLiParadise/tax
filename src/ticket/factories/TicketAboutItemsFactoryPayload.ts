@@ -1,7 +1,7 @@
 import {Location} from "../../Location";
 import {OrderItemState} from "../item";
 
-export interface TicketItemsFactoryPayload {
+export interface TicketAboutItemsFactoryPayload {
     location: Location;
     orderItems: OrderItemState[];
 }

@@ -1,4 +1,6 @@
+import {OrderItemState} from "./item";
+
 export interface TicketState {
-    items: any[];
+    items: OrderItemState[];
     splits: TicketState[];
 }
